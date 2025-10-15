@@ -14,6 +14,9 @@ ARG VERSION
 #  multiple platforms.
 FROM --platform=${BUILDPLATFORM} ${BUILD_IMAGE} AS builder
 
+# Switch to root for build permissions
+USER root
+
 # Copy sources
 WORKDIR /workspace
 
